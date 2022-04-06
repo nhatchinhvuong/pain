@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Draw lines of various width</title>
+</head>
+<body>
+    <div id="tool">
+        <button onclick="undo()">undo</button>
+
+        <button onclick="settool('pen')">pen</button>
+        <button onclick="settool('line')">line</button>
+        <button onclick="settool('rect')">rect</button>
+
+        <label for="works1">color</label> <input type="color" id="works1" value="#ff0000" onchange="mau(this.value);" />
+        <span id="rangeValue">2</span>
+        <Input type="range" value="2" min="1" max="40" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
+ 
+
+    </div>
+<canvas id="DemoCanvas" width="800" height="600"></canvas>  
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="thutoado.js"></script>
+<script type="text/javascript">
+function rangeSlide(value) {
+    document.getElementById('rangeValue').innerHTML = value;
+    v.cel = value;
+}
+function mau(x) {
+    v.cl = x;
+}
+function undo() {
+    v.undo();
+}
+function settool(x) {
+    v.tool = x;
+}
+
+</script>
+</body>
+</html>
